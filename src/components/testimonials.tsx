@@ -11,7 +11,7 @@ export default function Testimonials() {
             <p className="text-2xl leading-normal py-5">
               <Mark>Misión</Mark>
             </p>
-            <p className="text-2xl leading-normal ">
+            <p className="text-xl leading-normal ">
               Proporcionar servicios de empleabilidad para personas con discapacidad, empleando un enfoque inclusivo que permita crear vínculos entre diversas empresas. Queremos romper los estándares de contratación e inclusión para que todos tengan la oportunidad de trabajar y demostrar sus habilidades en un ambiente inclusivo y colaborativo.
             </p>
           </div>
@@ -32,16 +32,16 @@ export default function Testimonials() {
               <Mark>Valores</Mark>
             </p>
             <p className="text-xl leading-normal ">
-              Compromiso y confidencialidad: Nos comprometemos a proteger la confidencialidad de la información de nuestros clientes, garantizando que todos los datos sean manejados con el más alto nivel de seguridad y privacidad.
+              Compromiso y confidencialidad: Protegemos la confidencialidad de la información de nuestros clientes, manejando todos los datos con máxima seguridad y privacidad.
               <br />
               <br />
-              <strong>Honestidad:</strong> En nuestra empresa, actuaremos con transparencia, integridad y ética en todas nuestras operaciones, asegurando la confianza y el respeto de nuestros clientes. 
+              <strong>Honestidad:</strong> Actuamos con transparencia, integridad y ética, asegurando la confianza y el respeto de nuestros clientes.
               <br />
               <br />
-              <strong>Calidad:</strong> Nos dedicamos a ofrecer servicios de la más alta calidad, asegurando que cada aspecto de nuestro trabajo cumpla con los estándares más exigentes.
+              <strong>Calidad:</strong> Ofrecemos servicios de alta calidad, cumpliendo con los estándares más exigentes.
               <br />
               <br />
-              <strong>Responsabilidad social:</strong> Trabajamos para generar un impacto positivo en la comunidad con discapacidad, promoviendo el bienestar social, la inclusión socio laboral y el desarrollo sostenible.
+              <strong>Responsabilidad social:</strong> Generamos un impacto positivo en la comunidad con discapacidad, promoviendo bienestar social, inclusión laboral y desarrollo sostenible.
             </p>
           </div>
         </div>
