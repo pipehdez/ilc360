@@ -2,54 +2,47 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
-
 export default function Testimonials() {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              Share a real <Mark>testimonial</Mark>
-              that hits some of your benefits from one of your popular customer.
+          <div className="flex flex-col justify-start w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            <p className="text-2xl leading-normal py-5">
+              <Mark>Misión</Mark>
             </p>
-
-            <Avatar
-              image={userOneImg}
-              name="Sarah Steiner"
-              title="VP Sales at Google"
-            />
+            <p className="text-2xl leading-normal ">
+              Proporcionar servicios de empleabilidad para personas con discapacidad, empleando un enfoque inclusivo que permita crear vínculos entre diversas empresas. Queremos romper los estándares de contratación e inclusión para que todos tengan la oportunidad de trabajar y demostrar sus habilidades en un ambiente inclusivo y colaborativo.
+            </p>
           </div>
         </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              Make sure you only pick the <Mark>right sentence</Mark>
-              to keep it short and simple.
+        <div className="lg:col-span-2 xl:col-auto">
+          <div className="flex flex-col justify-start w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            <p className="text-2xl leading-normal py-5">
+              <Mark>Visión</Mark>
             </p>
-
-            <Avatar
-              image={userTwoImg}
-              name="Dylan Ambrose"
-              title="Lead marketer at Netflix"
-            />
+            <p className="text-xl leading-normal ">
+              Para el año 2033 seremos una empresa que promueva una sociedad inclusiva, siendo los pioneros en la creación de redes colaborativas enfocándonos en la innovación que logre fomentar la inclusión laboral de Personas con Discapacidad. Nuestra meta será siempre establecer un entorno donde las empresas y las Personas con Discapacidad trabajen juntas, logrando un reconocimiento a nivel nacional e internacional por nuestras contribuciones en este campo.
+            </p>
           </div>
         </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              This is an <Mark>awesome</Mark> landing page template I've seen. I
-              would use this for anything.
+        <div className="lg:col-span-2 xl:col-auto">
+          <div className="flex flex-col justify-start w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            <p className="text-2xl leading-normal py-5">
+              <Mark>Valores</Mark>
             </p>
-
-            <Avatar
-              image={userThreeImg}
-              name="Gabrielle Winn"
-              title="Co-founder of Acme Inc"
-            />
+            <p className="text-xl leading-normal ">
+              Compromiso y confidencialidad: Nos comprometemos a proteger la confidencialidad de la información de nuestros clientes, garantizando que todos los datos sean manejados con el más alto nivel de seguridad y privacidad.
+              <br />
+              <br />
+              <strong>Honestidad:</strong> En nuestra empresa, actuaremos con transparencia, integridad y ética en todas nuestras operaciones, asegurando la confianza y el respeto de nuestros clientes. 
+              <br />
+              <br />
+              <strong>Calidad:</strong> Nos dedicamos a ofrecer servicios de la más alta calidad, asegurando que cada aspecto de nuestro trabajo cumpla con los estándares más exigentes.
+              <br />
+              <br />
+              <strong>Responsabilidad social:</strong> Trabajamos para generar un impacto positivo en la comunidad con discapacidad, promoviendo el bienestar social, la inclusión socio laboral y el desarrollo sostenible.
+            </p>
           </div>
         </div>
       </div>
@@ -57,26 +50,7 @@ export default function Testimonials() {
   );
 }
 
-function Avatar(props: any) {
-  return (
-    <div className="flex items-center mt-8 space-x-3">
-      <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
-        <Image
-          src={props.image}
-          width="40"
-          height="40"
-          alt="Avatar"
-          layout="responsive"
-          placeholder="blur"
-        />
-      </div>
-      <div>
-        <div className="text-lg font-medium">{props.name}</div>
-        <div className="text-gray-600 dark:text-gray-400">{props.title}</div>
-      </div>
-    </div>
-  );
-}
+
 
 function Mark(props: any) {
   return (
