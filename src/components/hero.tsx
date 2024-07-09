@@ -160,7 +160,7 @@ export default function Hero() {
               data.map((item,index) => (
                 <div
                   key={index}
-                  className={`flex flex-col items-center justify-center p-5 mt-5 bg-white rounded-lg shadow-lg dark:bg-gray-800 ${item.color}`}
+                  className={`flex flex-col items-center justify-center p-5 mt-5 rounded-lg shadow-lg dark:bg-gray-800 ${item.color}`}
                 >
                   <button
                     onClick={() => handleModal(item as any)}

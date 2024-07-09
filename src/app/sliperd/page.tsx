@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <SectionTitle
       title="SLIPERD"
-      subtitle="Sistema de Lectura para Personas con Discapacidad"
+      subtitle="Uniendo talentos, creando oportunidades"
     />
   )
 }
