@@ -65,7 +65,11 @@ interface ModalData {
   color: string;
 }
 
-export default function Hero() {
+interface HeroProps {
+  imageBackground?: string;
+}
+
+export default function Hero({ imageBackground }: HeroProps) {
   const [showModal, setShowModal] = useState(false);
   const [modalData,setModalData] = useState({ src: "",alt: "",text: "", color: ""});
 
