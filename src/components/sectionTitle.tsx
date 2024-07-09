@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./container";
 
-export default function SectionTitle(props) {
+export default function SectionTitle(props: any) {
   return (
     <Container
       className={`flex w-full flex-col mt-4 ${
