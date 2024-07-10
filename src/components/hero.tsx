@@ -16,43 +16,43 @@ const sordoceguera = "/img/visual.png";
 const data = [
   {
     src: visual,
-    alt: "Visual",
+    alt: "Visual".toUpperCase(),
     text: "SON LAS PERSONAS CON DIVERSAS CONDICIONES OCULARES Y CAPACIDADES VISUALES DISMINUIDAS",
     color: "bg-blue-500",
   },
   {
     src: multiple,
-    alt: "Multiple",
+    alt: "Multiple".toUpperCase(),
     text: "INCLUYE PERSONAS QUE PRESENTAN UNA O MÁS DEFICIENCIAS PERMANENTES DE ORDEN FÍSICO, SENSORIA, MENTAL O INTELECTUAL Y QUE ACTUAN DE MANERA ASOCIADA. ",
     color: "bg-green-500",
   },
   {
     src: auditiva,
-    alt: "Auditiva",
+    alt: "Auditiva".toUpperCase(),
     text: "SON LAS PERSONAS QUE PRESENTAN DE FORMA PERMANENTE DISTINTOS TIPOS DE PÉRDIDA AUDITIVA. ",
     color: "bg-yellow-500",
   },
   {
     src: fisica,
-    alt: "Fisica",
+    alt: "Fisica".toUpperCase(),
     text: "INCLUYE A LAS PERSONAS QUE PRESENTAN DEFICIENCIAS CORPORALES QUE LIMITAN LA MOVILIDAD DE FORMA PERMANENTE.",
     color: "bg-red-500",
   },
   {
     src: psicosocial,
-    alt: "Psicosocial",
+    alt: "Psicosocial".toUpperCase(),
     text: "APARECE CUANDO LAS PERSONAS PRESENTAN TRASTORNOS Y PROBLEMAS MENTALES QUE IMPIDEN SU CONEXIÓN CON EL MEDIO.",
     color: "bg-purple-500",
   },
   {
     src: intelectual,
-    alt: "Intelectual",
+    alt: "Intelectual".toUpperCase(),
     text: "SE REFIERE A LAS PERSONAS CON DEFICIENCIAS EN LAS CAPACIDADES MENTALES GENERALES.",
     color: "bg-indigo-500",
   },
   {
     src: sordoceguera,
-    alt: "Sordoceguera",
+    alt: "Sordoceguera".toUpperCase(),
     text: "INCLUYE A LAS PERSONAS QUE PRESENTAN ALTERACIÓN SENSORIAL DE TIPO AUDITIVO Y VISUAL.",
     color: "bg-pink-500",
   }
@@ -123,11 +123,11 @@ export default function Hero({ imageBackground }: HeroProps) {
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-5xl font-bold leading-snug tracking-tight text-white lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
-              Bienvenidos a ILC360
+              BIENVENIDOS A ILC360
             </h1>
             <Separator />
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight dark:text-white">
-              ¿Que es discapacidad?
+              ¿QUE ES DISCAPACIDAD?
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-100 lg:text-xl xl:text-2xl dark:text-gray-300">
               De acuerdo con la OMS “Termino general que abarca las deficiencias, las limitaciones de la actividad y las restricciones de la participación en las personas” 
