@@ -7,15 +7,15 @@ import React, { useEffect } from 'react'
 
 const navigation = [
     {
-        name: "Servicios",
+        name: "Servicios".toUpperCase(),
         href: "/sliperd/servicios",
     },
     {
-        name: "Hoja de Vida",
+        name: "Hoja de Vida".toUpperCase(),
         href: "/sliperd/curriculum",
     },
     {
-        name: "Empleo",
+        name: "Empleo".toUpperCase(),
         href: "/sliperd/empleo",
     },
     // {
