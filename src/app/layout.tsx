@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Wrapper from './wrapper'
 import { Provider } from './provider'
 import Navbar from '@/components/navbar'
 import { usePathname } from 'next/navigation'
