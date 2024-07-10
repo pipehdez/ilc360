@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 const { MONGODB_URI } = process.env
 export const connectDB = async () => {
     try {
-        const { connection } = await mongoose.connect('mongodb+srv://dev:941001@cluster0.yqorpme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+        const { connection } = await mongoose.connect(MONGODB_URI as string)
         if (connection.readyState === 1) {
             return Promise.resolve(true)
         }
