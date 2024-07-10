@@ -4,7 +4,7 @@ import User from "@/models/User"
 import bcrypt from "bcryptjs"
 
 export const register = async (values: any) => {
-    const { email,password,name } = values
+    const { email,password,name, plan } = values
 
     try {
         await connectDB()
@@ -19,6 +19,7 @@ export const register = async (values: any) => {
             name,
             email,
             password: hashedPassword,
+            plan
         })
         const savedUser = await user.save()
 

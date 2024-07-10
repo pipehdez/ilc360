@@ -1,7 +1,8 @@
 "use client"
 import Subnavbar from '@/components/subnavbar'
+import { getSession } from 'next-auth/react'
 import { usePathname, useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 const navigation = [
@@ -35,7 +36,17 @@ export default function SliperdLayout({
     children: React.ReactNode
 }>) {
     const path = usePathname()
-    console.log({path})
+    useEffect(() => {
+        const getSessionData = async () => {
+            const session = await getSession()
+            console.log({ session })
+
+            if (session) {
+                console.log({ session })
+            }
+        }
+        getSessionData()
+    },[])
   return (
     <div className='p-0 w-full'>
     <div className="relative bg-white">

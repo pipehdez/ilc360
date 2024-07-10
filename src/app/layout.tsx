@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/navbar'
 import { Provider } from "./provider";
+import { useRouter } from 'next/navigation'
+import Wrapper from './wrapper'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Provider>
-        <body className={inter.className}>
-          <main className="flex min-h-screen flex-col items-center bg-white">
-            <Navbar />
-            {children}
-          </main>
-        </body>
-      </Provider>
+      <body className={inter.className}>
+        <Wrapper children={children} />
+      </body>
     </html>
   );
 }
+

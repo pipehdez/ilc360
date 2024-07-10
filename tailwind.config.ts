@@ -12,7 +12,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          "hero-background-image": "url('/img/image-background.jpg')",
+          "hero-background-image": "url('/img/fondo.jpg')",
       },
       colors: {
         'neutral-dark-grayish-blue': 'var(--neutral-dark-grayish-blue)',

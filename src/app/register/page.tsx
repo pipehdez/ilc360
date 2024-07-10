@@ -3,6 +3,7 @@ import { FormEvent,useRef,useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { register } from "@/actions/register"
+import mongoose, { mongo } from 'mongoose'
 
 
 export default function Register() {
@@ -14,7 +15,8 @@ export default function Register() {
         const r = await register({
             email: formData.get("email"),
             password: formData.get("password"),
-            name: formData.get("name")
+            name: formData.get("name"),
+            plan: new mongoose.Types.ObjectId('668ecc48d9bcdf41b9ad484b')
         })
         ref.current?.reset()
         if (r?.error) {
