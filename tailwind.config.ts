@@ -13,6 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           "hero-background-image": "url('/img/fondo.jpg')",
+          "sliperd-backgroud-image": "url('/img//curriculum.jpg')",
       },
       colors: {
         'neutral-dark-grayish-blue': 'var(--neutral-dark-grayish-blue)',

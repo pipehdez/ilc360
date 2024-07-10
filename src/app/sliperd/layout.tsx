@@ -36,32 +36,22 @@ export default function SliperdLayout({
     children: React.ReactNode
 }>) {
     const path = usePathname()
-    useEffect(() => {
-        const getSessionData = async () => {
-            const session = await getSession()
-            console.log({ session })
 
-            if (session) {
-                console.log({ session })
-            }
-        }
-        getSessionData()
-    },[])
   return (
     <div className='p-0 w-full'>
     <div className="relative bg-white">
-        <div className="absolute inset-0">
-                  <img className="object-cover w-full h-full" src={
+        {/* <div className="absolute inset-0">
+                  <img className="object-cover w-full h-72" src={
                       path === "/sliperd/curriculum" ? imageBackground2 :
                     imageBackground
                     } alt="image-background" />
             <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-        </div>
-        <div className="h-scren">
-            <Subnavbar
+        </div> */}
+              <div className="bg-sliperd-backgroud-image bg-no-repeat bg-cover bg-opacity-20 -z-10">
+            {/* <Subnavbar
                 navigation={navigation}
-            />
-            <div className="relative flex flex-col items-center justify-center h-screen text-white">
+            /> */}
+            <div className=" flex flex-col items-center justify-center  text-white">
                       <h1 className="text-8xl font-bold p-5">{path !== "/sliperd/curriculum" && "SLIPERD" }</h1>
                 <p className="text-3xl p-5 mx-10 text-center">
                     {

@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+      <nav className="container relative z-10 flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
 
         {/*  menu sandwiche with icon sandwiche*/}
         <div className="block ">
@@ -86,7 +86,6 @@ export default function Navbar() {
 
         {/*  menu */}
         <div className={`${openMenu ? 'bg-gray-500/35 fixed right-0 top-0 px-16 py-28 ' : 'hidden'}`}>
-          {/* <div className="lg:hidden lg:flex-grow lg:items-center lg:w-auto lg:px-3 lg:space-x-4"></div> */}
 
           <ul className="items-center   list-none   ">
             {navigation.map((nav,index) => (
