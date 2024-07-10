@@ -36,7 +36,7 @@ export default function Page() {
   if (status === 'loading') return <div>Loading...</div>
 
   if (status === 'unauthenticated') {
-    // route.push('/plans')
+    route.push('/plans')
   }
 
   return (
