@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --neutral-dark-grayish-blue: hsl(237, 18%, 40%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-light-grayish-blue: hsl(240, 20%, 90%);
+  --primary-linear-gradient: hsl(237, 63%, 64%) to hsl(237, 63%, 40%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,5 +33,25 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+@layer components {
+  .pricing-app {
+    @apply relative min-h-screen grid place-items-center bg-no-repeat bg-black bg-right-top;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--primary-fw);
+    font-size: var(--primary-fs);
+    background-color: var(--neutral-very-light-grayish-blue);
+    background-size: 375px 658px;
+    z-index: 999;
+  }
+
+  .pricing-app::before {
+    @apply absolute bottom-0 left-0 w-full max-w-[353px] h-[304px] bg-no-repeat bg-contain;
+    content: "";
+    background-color: black;
+    z-index: -1;
   }
 }

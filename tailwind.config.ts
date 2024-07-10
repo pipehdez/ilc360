@@ -14,6 +14,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           "hero-background-image": "url('/img/image-background.jpg')",
       },
+      colors: {
+        'neutral-dark-grayish-blue': 'var(--neutral-dark-grayish-blue)',
+        'neutral-white': 'var(--neutral-white)',
+        'neutral-light-grayish-blue': 'var(--neutral-light-grayish-blue)',
+        'primary-start': '#start-color', // Reemplaza con el color inicial de tu gradiente
+        'primary-end': '#end-color', // Reemplaza con el color final de tu gradiente
+      },
     },
   },
   plugins: [],

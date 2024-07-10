@@ -1,9 +1,14 @@
+"use client"
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
+import { useRouter } from 'next/navigation'
+import { signOut,useSession } from "next-auth/react";
 
 export default function Navbar() {
   // const navigation = ["Home", "Sliperd", "Comunicación"];
+  const { status } = useSession()
+  const router = useRouter();
   const navigation = [
     {
       name: "Home",
@@ -18,6 +23,37 @@ export default function Navbar() {
       href: "/comunicacion",
     }
   ];
+
+  const showSession = () => {
+    if (status === "authenticated") {
+      return (
+        <button
+          className="border border-solid border-black rounded"
+          onClick={() => {
+            signOut({ redirect: false }).then(() => {
+              router.push("/")
+            })
+
+          }}
+        >
+          Sign Out
+        </button>
+      )
+    } else if (status === "loading") {
+      return (
+        <span className="text-[#888] text-sm mt-7">Loading...</span>
+      )
+    } else {
+      return (
+        <Link
+          href="/login"
+          className="border border-solid border-black rounded"
+        >
+          Sign In
+        </Link>
+      )
+    }
+  }
 
   return (
     <div className="w-full">
@@ -96,6 +132,7 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            {showSession()}
           </ul>
         </div>
 

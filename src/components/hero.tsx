@@ -119,39 +119,8 @@ export default function Hero({ imageBackground }: HeroProps) {
   
   return (
     <>
-      <Container className="flex flex-wrap ">
-        <div className="flex items-center w-full lg:w-1/2">
-          <div className="max-w-2xl mb-8">
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight dark:text-white">
-              ¿Que es discapacidad?
-            </h1>
-            <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              De acuerdo con la OMS “Termino general que abarca las deficiencias, las limitaciones de la actividad y las restricciones de la participación en las personas” 
-            </p>
-            <Separator />
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight dark:text-white">
-              ¿Quienes son las personas con discapacidad?
-            </h1>
-            <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              De acuerdo con la OMS “Termino general que abarca las deficiencias, las limitaciones de la actividad y las restricciones de la participación en las personas”
-            </p>
-          
-          </div>
-        </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
-          <div className="hidden lg:block">
-            <Image
-              src={heroImg}
-              width="616"
-              height="617"
-              alt="Discapacidad"
-              layout="intrinsic"
-              loading="eager"
-              placeholder="blur"
-            />
-          </div>
-        </div>
-      </Container>
+      <WelcomeSection />
+      <InfoSection />
       <Container>
         <div className="flex flex-col justify-center">
           {/* <div className="text-xl text-center text-gray-700 dark:text-white">
@@ -188,4 +157,43 @@ export default function Hero({ imageBackground }: HeroProps) {
       )}
     </>
   );
+}
+
+const InfoSection = () => {
+  return (
+    <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="md:w-1/2">
+        <img
+          src="/path-to-your-image/image.png"
+          alt="Description"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="md:w-1/2 p-8">
+        <h2 className="text-3xl font-bold mb-4">¿Qué es la Discapacidad?</h2>
+        <p className="mb-4">
+          Aquí comienza tu texto. Puedes hacer clic en este punto y empezar a escribir. Dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est.
+        </p>
+        <p>
+          Eos qui ratione voluptatem sequi nesciunt neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem ut enim ad minima veniam.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+
+const WelcomeSection = () => {
+  return (
+    <div className="relative w-full h-60 bg-cover bg-center" style={{ backgroundImage: "url('/img/curriculum.jpg')" }}>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+        <h1 className="text-5xl md:text-6xl font-bold">BIENVENIDOS A ILC360</h1>
+        {/* <p className="mt-4 text-lg md:text-xl">Haz clic aquí para editar...</p> */}
+        <button className="mt-8 px-6 py-3 bg-gray-800 bg-opacity-70 rounded-lg hover:bg-opacity-90 transition duration-300">
+          Clic aquí
+        </button>
+      </div>
+    </div>
+  )
 }

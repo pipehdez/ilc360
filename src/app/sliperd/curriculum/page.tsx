@@ -18,13 +18,7 @@ export default function Page() {
         <p className="text-2xl">Este formato,enlaza la información laboral y académica de manera cronológica y destaca las habilidades adquiridas o desarrolladas por temas específicos.</p>
       </div>
     </div>
-    {/* crea un formulario de hoja de vida: 
-     INFORMACIÓN QUE DEBE LLEVAR LA HOJA DE VIDA:
-Datos personales: nombre y apellido, dirección, teléfono, estado civil, correo electrónico
-Perfil: aquí iría la descripción del usuario ej, Persona comprometida, con más de un año de experiencia en este sector laboral….
-Formación académica
-Habilidades
-Experiencia profesional si la tiene  */}
+    
     <div className="container mx-auto flex flex-col  justify-center py-10 bg-gray-200 p-5 mb-5">
       <p className="text-2xl font-bold py-5 text-center">Formulario de hoja de vida</p>
       <form className="grid grid-cols-1 gap-4 py-3">
