@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        AUTH_SECRET: process.env.AUTH_SECRET,
-        NEXT_PUBLIC_MONGODB_URI: process.env.MONGODB_URI,
-        NEXT_PUBLIC_AUTH_SECRET: process.env.AUTH_SECRET,
+        MONGODB_URI: "mongodb+srv://dev:941001@cluster0.yqorpme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        AUTH_SECRET: "x9cH/cpjdXDJPpMdR1P65oUm4Wzm0XV9pZm9LvzFq6U="
     }
 };
 
