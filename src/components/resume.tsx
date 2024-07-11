@@ -189,14 +189,14 @@ const Resume = () => {
                     label='Nombre'
                     name='name'
                     type="text"
-                    value={profile.name}
+                    value={profile?.name}
                     onChange={(value) => handleProfileChange('name',value)}
                 />
                 <Input
                     label='Profesión'
                     name='jobTitle'
                     type="text"
-                    value={profile.jobTitle}
+                    value={profile?.jobTitle}
                     onChange={(value) => handleProfileChange('jobTitle',value)}
                 />
 
@@ -205,45 +205,45 @@ const Resume = () => {
                     label='Dirección'
                     name='address'
                     type="text"
-                    value={profile.address}
+                    value={profile?.address}
                     onChange={(value) => handleProfileChange('address',value)}
                 />
                 <Input
                     label='Ciudad'
                     name='city'
                     type="text"
-                    value={profile.city}
+                    value={profile?.city}
                     onChange={(value) => handleProfileChange('city',value)}
                 />
                 <Input
                     label='País'
                     name='country'
                     type="text"
-                    value={profile.country}
+                    value={profile?.country}
                     onChange={(value) => handleProfileChange('country',value)}
                 />
                 <Input
                     label='Teléfono o Celular'
                     name='phone'
                     type="text"
-                    value={profile.phone}
+                    value={profile?.phone}
                     onChange={(value) => handleProfileChange('phone',value)}
                 />
                 <Input
                     label='Correo electrónico'
                     name='email'
                     type="text"
-                    value={profile.email}
+                    value={profile?.email}
                     onChange={(value) => handleProfileChange('email',value)}
                 />
 
                 <h3 className="text-2xl font-semibold mt-6 mb-2">Habilidades</h3>
                 <ul>
-                    {profile.skills.map((skill,index) => (
+                    {profile?.skills.map((skill,index) => (
                         <li key={index}>
                             <Input
                                 type="text"
-                                value={skill.name}
+                                value={skill?.name}
                                 onChange={(value) => handleSkillChange(index,'name',value)}
                             />
                         </li>
@@ -254,7 +254,7 @@ const Resume = () => {
             <div className="bg-white p-8 md:w-2/3 rounded-b-lg md:rounded-r-lg md:rounded-b-none">
                 <h3 className="text-2xl font-bold mb-4">Perfil</h3>
                 <Textarea
-                    value={profile.profileDescription}
+                    value={profile?.profileDescription}
                     onChange={(value) => handleProfileChange('profileDescription',value)}
                 />
 
@@ -270,18 +270,18 @@ const Resume = () => {
                         <Input
                             label='Posición'
                             type="text"
-                            value={job.position}
+                            value={job?.position}
                             onChange={(value) => handleEmploymentChange(index,'position',value)}
                         />
                         <Input
                             label='Periodo'
                             type="text"
-                            value={job.period}
+                            value={job?.period}
                             onChange={(value) => handleEmploymentChange(index,'period',value)}
                         />
                         <ul className="list-disc list-inside">
                             <h3 className="text-sm font-semibold mt-6 mb-2 text-gray-500">Agrega tus responsabilidades</h3>
-                            {job.responsibilities.map((responsibility,resIndex) => (
+                            {job?.responsibilities.map((responsibility,resIndex) => (
                                 <Input
                                     key={resIndex}
                                     type="text"
@@ -294,7 +294,7 @@ const Resume = () => {
                 ))}
 
                 <h3 className="text-2xl font-bold mt-8 mb-4">Educación</h3>
-                {profile.education.map((edu,index) => (
+                {profile?.education.map((edu,index) => (
                     <div key={index} className="
             mb-4
             background-color: #f9f9f9;
@@ -305,18 +305,18 @@ const Resume = () => {
                         <Input
                             label='Título obtenido'
                             type="text"
-                            value={edu.degree}
+                            value={edu?.degree}
                             onChange={(value) => handleEducationChange(index,'degree',value)}
                         />
                         <Input
                             label='Periodo'
                             type="text"
-                            value={edu.period}
+                            value={edu?.period}
                             onChange={(value) => handleEducationChange(index,'period',value)}
                         />
-                        {edu.description && (
+                        {edu?.description && (
                             <Textarea
-                                value={edu.description}
+                                value={edu?.description}
                                 onChange={(value) => handleEducationChange(index,'description',value)}
                             />
                         )}
@@ -324,7 +324,7 @@ const Resume = () => {
                 ))}
 
                 <h3 className="text-2xl font-bold mt-8 mb-4">Referencias</h3>
-                {profile.references.map((ref,index) => (
+                {profile?.references.map((ref,index) => (
                     <div key={index} className="
             mb-4
             background-color: #f9f9f9;
@@ -336,13 +336,13 @@ const Resume = () => {
                         <Input
                             label='Nombre'
                             type="text"
-                            value={ref.name}
+                            value={ref?.name}
                             onChange={(value) => handleReferenceChange(index,'name',value)}
                         />
                         <Input
                             label='Contacto'
                             type="text"
-                            value={ref.contact}
+                            value={ref?.contact}
                             onChange={(value) => handleReferenceChange(index,'contact',value)}
                         />
                     </div>
