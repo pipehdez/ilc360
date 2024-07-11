@@ -25,34 +25,34 @@ export default function Login() {
     };
 
     return (
-        <section className="w-full h-screen flex items-center justify-center">
+        <section className="w-full h-screen flex items-center justify-center bg-hero-background-image bg-no-repeat bg-cover ">
             <form
                 className="p-6 w-full max-w-[400px] flex flex-col justify-between items-center gap-2 
         border border-solid border-black bg-white rounded"
                 onSubmit={handleSubmit}>
                 {error && <div className="text-black">{error}</div>}
-                <h1 className="mb-5 w-full text-2xl font-bold">Sign In</h1>
-                <label className="w-full text-sm">Email</label>
+                <h1 className="mb-5 w-full text-2xl font-bold text-blue-500 ">Sign In</h1>
+                <label className="w-full text-sm text-blue-500 ">Email</label>
                 <input
                     type="email"
                     placeholder="Email"
-                    className="w-full h-8 border border-solid border-black rounded p-2"
+                    className="w-full h-8 border border-solid border-blue-500 rounded p-2"
                     name="email" />
-                <label className="w-full text-sm">Password</label>
+                <label className="w-full text-sm text-blue-500 ">Password</label>
                 <div className="flex w-full">
                     <input
                         type="password"
                         placeholder="Password"
-                        className="w-full h-8 border border-solid border-black rounded p-2"
+                        className="w-full h-8 border border-solid border-blue-500 rounded p-2"
                         name="password" />
                 </div>
-                <button className="w-full border border-solid border-black rounded">
+                <button className="w-full border border-solid border-blue-500 rounded text-blue-500 ">
                     Sign In
                 </button>
 
                 <Link
                     href="/register"
-                    className="text-sm text-[#888] transition duration-150 ease hover:text-black">
+                    className="text-sm text-blue-500/25 text-blue-500   transition duration-150 ease hover:text-black">
                     No una tienes cuenta?
                 </Link>
             </form>

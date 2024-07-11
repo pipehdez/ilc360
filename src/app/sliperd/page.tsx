@@ -9,6 +9,8 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { url } from 'inspector'
+import Link from 'next/link'
 
 const benefitOneImg = '/img/description.jpg'
 const benefitTwoImg = '/img/about.jpg'
@@ -56,8 +58,8 @@ export default function Page() {
 }
 
 const services = [
-  { id: 1,title: 'Evaluación de habilidades adaptivas',image: '/img/certainty.png' },
-  { id: 2,title: 'Hoja de vida',image: '/img/cv.png' },
+  { id: 1,title: 'Evaluación de habilidades adaptivas',image: '/img/certainty.png',url: '/sliperd/servicios'},
+  { id: 2,title: 'Hoja de vida',image: '/img/cv.png', url: '/sliperd/curriculum'},
   { id: 3,title: 'Capacitaciones',image: '/img/conversation.png' },
   { id: 4,title: 'Bolsa de empleo',image: '/img/work.png' },
 ]
@@ -70,10 +72,18 @@ const OurServices = () => {
       <Separator />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full mt-10">
         {services.map((service) => (
+          !service.url ?(
           <div key={service.id} className="flex flex-col items-center">
             <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-contain" />
             <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service.title}</p>
-          </div>
+          </div>) : (
+            <Link href={service.url} key={service.id}>
+              <p className="flex flex-col items-center">
+                <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-contain" />
+                <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service.title}</p>
+              </p>
+            </Link>
+          )
         ))}
       </div>
     </div>

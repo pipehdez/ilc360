@@ -27,3 +27,16 @@ export const register = async (values: any) => {
         console.log(e)
     }
 }
+
+export const getUserInfo = async (email: string) => {
+    console.log('getUserInfo', {email})
+    try {
+        await connectDB()
+        const user = await User
+            .findOne({ email })
+            .exec()
+        return user
+    } catch (e) {
+        console.log(e)
+    }
+}

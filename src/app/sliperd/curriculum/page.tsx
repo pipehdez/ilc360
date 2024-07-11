@@ -1,8 +1,18 @@
-import React from 'react'
+'use client'
+import Resume from '@/components/resume'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export default function Page() {
+  const { status } = useSession()
+  const route = useRouter()
+  if (status === 'unauthenticated') {
+    route.push('/plans')
+  }
+  
   return (
     <>
+      <ResumeSection />
     <div className="container mx-auto flex flex-col  justify-center py-10">
         <p className="text-2xl font-bold py-5 text-center">Tipos de hojas de vida que asesoramos:</p>
         <div className="grid grid-cols-1 gap-4 py-3">
@@ -19,32 +29,11 @@ export default function Page() {
       </div>
     </div>
     
-    <div className="container mx-auto flex flex-col  justify-center py-10 bg-gray-200 p-5 mb-5">
-      <p className="text-2xl font-bold py-5 text-center">Formulario de hoja de vida</p>
-      <form className="grid grid-cols-1 gap-4 py-3">
-        <label htmlFor="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" />
-        <label htmlFor="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" />
-        <label htmlFor="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" />
-        <label htmlFor="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" />
-        <label htmlFor="estadoCivil">Estado civil:</label>
-        <input type="text" id="estadoCivil" name="estadoCivil" />
-        <label htmlFor="correo">Correo electrónico:</label>
-        <input type="text" id="correo" name="correo" />
-        <label htmlFor="perfil">Perfil:</label>
-        <input type="text" id="perfil" name="perfil" />
-        <label htmlFor="formacion">Formación académica:</label>
-        <input type="text" id="formacion" name="formacion" />
-        <label htmlFor="habilidades">Habilidades:</label>
-        <input type="text" id="habilidades" name="habilidades" />
-        <label htmlFor="experiencia">Experiencia profesional:</label>
-        <input type="text" id="experiencia" name="experiencia" />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+  
+      <Resume />
+
+      
+    
     {/* lema final  */}
     <div className="container mx-auto flex flex-col  justify-center py-10 p-5 my-10">
         <p className="text-2xl font-bold py-5 text-center">“Crea tu propia hoja de vida o contrata un asesor quien guíe tu proceso de creación. Descárgala y súbela a tu perfil, para que puedas disfrutar del proceso de empleabilidad.”</p>
@@ -52,3 +41,29 @@ export default function Page() {
     </>
   )
 }
+
+const ResumeSection = () => {
+  return (
+    <div className="relative flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/img/empleo.jpg')" }}>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10 text-center text-white p-8 max-w-2xl bg-black bg-opacity-50 rounded-lg">
+        <h1 className="text-4xl font-bold mb-6">Hoja de vida</h1>
+        <p className="mb-6">
+          Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo.
+        </p>
+        <button className="mt-4 px-6 py-3 bg-gray-800 bg-opacity-70 rounded-lg hover:bg-opacity-90 transition duration-300" 
+          // llamar al id
+          // @ts-ignore
+          onClick={() => document.getElementById('resume').scrollIntoView({ behavior: 'smooth' })}
+        >
+          Iniciar
+        </button>
+      </div>
+    </div>
+  )
+}
+
+
+
+
+
