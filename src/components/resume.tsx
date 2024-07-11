@@ -259,7 +259,7 @@ const Resume = () => {
                 />
 
                 <h3 className="text-2xl font-bold mt-8 mb-4">Experiencia Laboral</h3>
-                {profile.employmentHistory.map((job,index) => (
+                {profile?.employmentHistory.map((job,index) => (
                     <div key={index} className="
             mb-4
             background-color: #f9f9f9;
