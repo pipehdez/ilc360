@@ -21,6 +21,7 @@ export const saveCurriculum = async  (values: any, email: string) => {
         return { status: 'ok'}
     } catch (e) {
         console.log(e)
+        return { error: 'Error saving curriculum' }
         
     }
 }
@@ -57,6 +58,7 @@ export const updateCurriculum = async (values: any, email: string) => {
             return { status: 'ok' }
         } catch (e) {
             console.log(e)
+            return { error: 'Error updating curriculum' }
         }
 }
 
@@ -67,17 +69,20 @@ export const getCurriculum = async (email: string ) => {
     try {
         await connectDB()
         const user = await User.findOne({ email: myEmail })
-        console.log('user',user)
+        // console.log('user',user)
         if (!user) {
             return {
                 error: 'User not found'
             }
         }
-        console.log('res',user)
 
         const curriculum = await Curriculum.findOne({ user: user._id })
         console.log('curriculum', curriculum)
-        return curriculum.toObject()
+        if (!curriculum) {
+            return []
+        }
+        
+        return curriculum.toObject() 
     } catch (e) {
         console.log(e)
     }

@@ -1,12 +1,12 @@
 interface InputProps {
     label?: string
     type?: string
-    value: string
+    value?: string
     name?: string
     onChange: (value: string) => void
 }
 
-const Input = ({ label,name,type,value,onChange }: InputProps) => (
+const Input = ( { label,name,type,value,onChange }: InputProps) => (
     <div className="
     flex
     flex-col
@@ -28,8 +28,9 @@ const Input = ({ label,name,type,value,onChange }: InputProps) => (
     </div>
 )
 
-const Textarea = ({ value,onChange }: InputProps) => (
+const Textarea = ({ value, name, onChange }: InputProps) => (
     <textarea
+        name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="w-full bg-transparent border-b-2 rounded-md shadow-sm border-none focus:outline-none"
