@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { usePathname,useRouter } from 'next/navigation'
 import { signOut,useSession } from "next-auth/react"
-import { use,useState } from 'react'
+import { use,useEffect,useState } from 'react'
 
 export default function Navbar() {
   // const navigation = ["Home", "Sliperd", "Comunicación"];
@@ -10,6 +10,11 @@ export default function Navbar() {
   const { status } = useSession()
   const router = useRouter()
   const path = usePathname()
+
+  useEffect(() => {
+    setOpenMenu(false)
+  }, [path])
+
   const navigation = [
     {
       name: "INICIO",
