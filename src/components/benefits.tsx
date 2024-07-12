@@ -16,8 +16,8 @@ export default function Benefits(props: any) {
           <div>
             <Image
               src={image}
-              width="521"
-              height="482"
+              width="400"
+              height="400"
               alt="Benefits"
               // layout="intrinsic"
               // placeholder="blur"
@@ -34,7 +34,9 @@ export default function Benefits(props: any) {
               {title !== '' && <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
                 {title}
               </h3>}
-              <Separator />
+              {
+                title !== '' && <Separator />
+              }
               <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300 text-justify ">
                 {desc}
               </p>
