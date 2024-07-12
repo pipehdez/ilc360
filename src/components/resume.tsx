@@ -242,6 +242,7 @@ const Resume = () => {
 
         // Validación de campos requeridos
         const requiredFields = ['name','jobTitle','address','city','country','phone','email','profileDescription']
+        // @ts-ignore
         const missingField = requiredFields.find((field) => !values[field]);
 
         if (missingField || !profile.skills || !profile.employmentHistory || !profile.education || !profile.references) {
