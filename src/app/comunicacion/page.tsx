@@ -39,6 +39,7 @@ export default function Page() {
     }
     return (
         <div className='w-full'>
+            <OurPrograms />
             {
                 benefit.map((item, index) => (
                     <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
@@ -47,6 +48,36 @@ export default function Page() {
             <MissionVision />
             <ValuesSection />
             
+        </div>
+    )
+}
+
+const services = [
+    { id: 1,title: 'Destrezas comunicativas',image: '/img/destrezas-comunicativas.jpeg',url: '/comunicacion/destrezas' },
+    { id: 2,title: 'Procesamiento cognitivo',image: '/img/procesamiento-cognitivo.jpeg',url: '/comunicacion/procesamiento' },
+    { id: 3,title: 'Competencias comunicativas',image: '/img/competencias-comunicativas.jpeg',url: '/comunicacion/competencias' },
+]
+
+const OurPrograms = () => {
+    return (
+        // flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto mb-10 justify-center max-w-screen-2xl
+        <div className="flex flex-col bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
+            <h2 className="text-3xl font-bold mb-6">NUESTROS PROGRAMAS</h2>
+            <Separator />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 w-full mt-10 ">
+                {services.map((service) => (
+                    !service.url ? (
+                        <div key={service.id} className="flex flex-col items-center">
+                            <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-contain" />
+                            <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service?.title}</p>
+                        </div>) : (
+                            <Link href={service.url} key={service.id} className='flex flex-col items-center mx-auto'>
+                                <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-cover" />
+                                <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service.title}</p>
+                        </Link>
+                    )
+                ))}
+            </div>
         </div>
     )
 }

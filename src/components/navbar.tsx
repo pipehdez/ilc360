@@ -29,7 +29,7 @@ export default function Navbar() {
     if (status === "authenticated") {
       return (
         <button
-          className={`border border-solid border-white ${path === '/' ? "text-white" : "text-gray-600"} rounded`}
+          className={`border border-solid ml-44 border-white ${path === '/' ? "text-white" : "text-white"} rounded`}
           onClick={() => {
             signOut({ redirect: false }).then(() => {
               router.push("/")
@@ -58,13 +58,31 @@ export default function Navbar() {
 
   return (
     <div className="w-full">
-      <nav className="container relative z-10 flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+      <nav className="w-full relative z-10 flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0 ">
 
         {/*  menu sandwiche with icon sandwiche*/}
-        <div className="block ">
+        
+
+
+        {/*  menu */}
+        <div className={`${openMenu ? 'bg-gray-500/75 absolute left-0 top-0 px-16 py-28 z-0' : 'hidden'}`}>
+
+          <ul className="items-center list-none   ">
+            {navigation.map((nav,index) => (
+              <li className="pl-40 nav__item" key={index}>
+                <Link href={nav.href} className={`inline-block px-4 py-2 text-lg font-normal ${path === '/' ? "text-white" : "text-white"} no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none`}>
+                  {nav.name}
+                </Link>
+              </li>
+            ))}
+            {showSession()}
+          </ul>
+        </div>
+
+        <div className="relative pl-40">
           <button
             id="menu-sandwich"
-            className={`flex items-center px-3 py-2 ${path === '/' ? "text-white" : "text-gray-600"}  border border-white rounded border-opacity-50 hover:text-white hover:border-white`}
+            className={`flex items-center px-3 py-2 ${path === '/' ? "text-white" : "text-gray-600"}  border border-gray-600 rounded border-opacity-50  z-20`}
             onClick={() => setOpenMenu(!openMenu)}
           >
             <svg
@@ -77,26 +95,10 @@ export default function Navbar() {
               <path fill="none" d="M0 0h24v24H0z" />
               <path
                 d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"
-                fill="currentColor"
+                fill={path === '/' ? "text-white" : "text-gray-600"}
               />
             </svg>
           </button>
-        </div>
-
-
-        {/*  menu */}
-        <div className={`${openMenu ? 'bg-gray-500/35 fixed right-0 top-0 px-16 py-28 ' : 'hidden'}`}>
-
-          <ul className="items-center   list-none   ">
-            {navigation.map((nav,index) => (
-              <li className=" nav__item" key={index}>
-                <Link href={nav.href} className={`inline-block px-4 py-2 text-lg font-normal ${path === '/' ? "text-white" : "text-gray-600"} no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none`}>
-                  {nav.name}
-                </Link>
-              </li>
-            ))}
-            {showSession()}
-          </ul>
         </div>
 
       </nav>
