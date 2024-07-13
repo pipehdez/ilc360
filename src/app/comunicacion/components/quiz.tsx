@@ -99,19 +99,7 @@ const Quiz = ({images, onClick}: QuizProps) => {
 
     return (
         <div className="bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
-            {/* {currentStep === 0 && (
-                <>
-                    <div className="text-center text-2xl mb-4">Tiempo restante: {timeLeft} segundos</div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        {images.map((image) => (
-                            <div key={image.id}>
-                                <Image src={image.src} alt={image.name} width={200} height={200} />
-                                <p className="text-center">{image.name}</p>
-                            </div>
-                        ))}
-                    </div>
-                </>
-            )} */}
+
             {/* {currentStep === 1 && ( */}
                 <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={shuffledImages} strategy={verticalListSortingStrategy}>
@@ -123,13 +111,10 @@ const Quiz = ({images, onClick}: QuizProps) => {
                     </SortableContext>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                         {selectedImages.map((image) => (
-                            // <div key={image.id} className="bg-blue-200 flex items-center justify-center h-32">
+                            <div key={image.id} className="bg-blue-200 flex items-center justify-center h-32">
                                 <Image src={image.src} alt={image.name} width={200} height={200} />
-                            // </div>
+                            </div>
                         ))}
-                        {/* {Array.from({ length: images.length - selectedImages.length }).map((_,idx) => (
-                            <div key={idx} className="bg-blue-200 h-32 flex items-center justify-center"></div>
-                        ))} */}
                     </div>
                     {isCorrectOrder && (
                         <div className="mt-4">
