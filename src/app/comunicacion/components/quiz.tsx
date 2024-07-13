@@ -24,8 +24,8 @@ const SortableItem: React.FC<{ id: string; src: string; name: string }> = ({ id,
     }
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="bg-blue-100 flex items-center justify-center cursor-pointer">
-            <Image src={src} alt={name} width={200} height={200} />
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="flex-col  align-middle bg-blue-100 flex items-center justify-center cursor-pointer p-2">
+            <Image src={src} alt={name} width={200} height={200} className='object-content w-48 h-48' />
         </div>
     )
 }
@@ -103,16 +103,17 @@ const Quiz = ({images, onClick}: QuizProps) => {
             {/* {currentStep === 1 && ( */}
                 <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={shuffledImages} strategy={verticalListSortingStrategy}>
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4 `}>
                             {shuffledImages.map((image) => (
                                 <SortableItem key={image.id} id={image.id} src={image.src} name={image.name} />
                             ))}
                         </div>
                     </SortableContext>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4 `}>
+                        {/* {`grid grid-cols-1 md:grid-cols-${images.length} gap-4 `} */}
                         {selectedImages.map((image) => (
-                            <div key={image.id} className="bg-blue-200 flex items-center justify-center h-32">
-                                <Image src={image.src} alt={image.name} width={200} height={200} />
+                            <div key={image.id} className="flex-col  align-middle bg-blue-100 flex items-center justify-center cursor-pointer p-2">
+                                <Image src={image.src} alt={image.name} width={200} height={200} className='object-content w-48 h-48' />
                             </div>
                         ))}
                     </div>

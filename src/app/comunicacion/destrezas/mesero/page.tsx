@@ -5,59 +5,45 @@ import QuizSlots, { ImageItem } from "../../components/quizSlots";
 import SelectionQuiz from "../../components/SelectionQuiz";
 import Congrats from "../../components/congrats";
 
-
 const imagesActivityOne: ImageItem[] = [
-  { id: "1",src: "/img/azucar.jpg",name: "Azucar" },
-  { id: "2",src: "/img/harina.jpg",name: "Harina" },
-  { id: "3",src: "/img/mantequilla.jpg",name: "Mantequilla" },
-  { id: "4",src: "/img/sal.jpg",name: "Sal" },
-];
+  { id: "1",src: "/img/limpiar.jpg",name: "Limpiar" },
+  { id: "2",src: "/img/bandeja-tapa.jpg",name: "Servir" },
+  { id: "3",src: "/img/cobrar.jpg",name: "Cobrar" },
+]
 
 const imagesActivityTwo: ImageItem[] = [
-  { id: "1",src: "/img/bandeja.jpg",name: "Bandeja" },
-  { id: "2",src: "/img/horno.jpg",name: "Horno" },
-  { id: "3",src: "/img/huevos.jpg",name: "Huevos" },
-  { id: "4",src: "/img/rodillo.jpg",name: "Rodillo" },
+  { id: "1", src: "/img/servir.jpg", name: "Servir" },
+  { id: "2", src: "/img/toalla.jpg", name: "Atender" },
+  { id: "3", src: "/img/carta.jpg", name: "Ofrecer" },
 ];
 
 const imagesActivityThree: ImageItem[] = [
-  { id: "1", src: "/img/batidor.jpg", name: "Batidor" },
-  { id: "2", src: "/img/cuchillo.jpg", name: "Cuchillo" },
-  { id: "3", src: "/img/manga-pastel.jpg", name: "Manga Pastel" },
-  { id: "4", src: "/img/molde.jpg", name: "Molde" },
+  { id: "1",src: "/img/uniforme-mesero.jpg", name: "Uniforme de mesero" },
+  { id: "2", src: "/img/cubiertos.jpg", name: "Cubiertos" },
+  { id: "3", src: "/img/menu.jpg", name: "Menú" },
 ];
 
 const imagesActivityFour: ImageItem[] = [
-  { id: "1", src: "/img/dotacion.jpg", name: "" },
-  { id: "2", src: "/img/lavado-manos.jpg", name: "" },
-  { id: "3", src: "/img/preparacion.jpg", name: "" },
-  { id: "4", src: "/img/hornear.jpg", name: "" },
+  { id: "1",src: "/img/limpiar-mesa.jpg", name: "" },
+  { id: "2",src: "/img/ordernar-mesa.jpg", name: "" },
+  { id: "3",src: "/img/tomar-pedido.jpg", name: "" },
+  { id: "4",src: "/img/servir-platos.jpg",name: "" },
+  { id: "5",src: "/img/recoger-platos.jpg", name: "" },
 ];
 
 const questionsOne = [
   {
     id: "1",
-    image: "/img/manos-sucias.jpg",
+    image: "/img/caer-platos.jpg",
     options: [
-      { id: "1",src: "/img/2-res-mala.webp", isCorrect: false },
-      { id: "2",src: "/img/2-res-correcta.jpg", isCorrect: true },
-    ],
-  },
-];
-
-const questionsTwo = [
-  {
-    id: "1",
-    image: "/img/platos-sucias.jpg",
-    options: [
-      { id: "1",src: "/img/3-res-mala.jpeg",isCorrect: false },
-      { id: "2",src: "/img/3-res-correcta.jpg",isCorrect: true },
+      { id: "1", src: "/img/4-res-mala.jpg", isCorrect: false },
+      { id: "2", src: "/img/4-res-correcta.jpg", isCorrect: true },
     ],
   },
 ];
 
 export default function Page() {
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(3);
 
   const handleNextStep = () => {
     console.log("handleNextStep");
@@ -85,10 +71,7 @@ export default function Page() {
         <Quiz images={imagesActivityFour} onClick={handleNextStep} />
       ) : currentStep === 4 ? (
         <SelectionQuiz questions={questionsOne} onClick={handleNextStep} />
-      ) : currentStep === 5 ? (
-        <SelectionQuiz questions={questionsTwo} onClick={handleNextStep} />
-      ) :
-      (
+      ) : (
         <Congrats />
       )}
     </>

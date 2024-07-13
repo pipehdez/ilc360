@@ -1,3 +1,8 @@
+'use client';
+import AgilityQuiz from '../components/AgilityQuiz'
+
 export default function Page() {
-  return <div>Procesamiento</div>;
+  return (
+    <AgilityQuiz />
+  )
 }

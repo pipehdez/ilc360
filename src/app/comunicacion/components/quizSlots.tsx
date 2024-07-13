@@ -31,7 +31,7 @@ const SortableItem: React.FC<{ id: string; src: string; name: string }> = ({ id,
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="flex-col  align-middle bg-blue-100 flex items-center justify-center cursor-pointer p-2">
-      <Image src={src} alt={name} width={200} height={200} className=' object-content ' />
+      <Image src={src} alt={name} width={200} height={200} className=' object-content w-48 h-48' />
     </div>
   )
 }
@@ -40,7 +40,7 @@ const DroppableSlot: React.FC<{ id: string; children?: React.ReactNode }> = ({ i
   const { setNodeRef } = useSortable({ id })
 
   return (
-    <div ref={setNodeRef} className="bg-blue-200 h-32 flex items-center justify-center">
+    <div ref={setNodeRef} className="bg-blue-200 p-2 min-h-52 flex items-center justify-center">
       {children}
     </div>
   )
@@ -54,7 +54,7 @@ interface QuizSlotsProps {
 const QuizSlots = ({ images,onClick }: QuizSlotsProps) => {
   const [currentStep,setCurrentStep] = useState(0)
   const [shuffledImages,setShuffledImages] = useState<ImageItem[]>([])
-  const [slots,setSlots] = useState<(ImageItem | null)[]>(Array(4).fill(null))
+  const [slots,setSlots] = useState<(ImageItem | null)[]>(Array(images.length).fill(null))
   const [isCorrectOrder,setIsCorrectOrder] = useState(false)
   const [timeLeft,setTimeLeft] = useState(10)
 
@@ -100,7 +100,7 @@ const QuizSlots = ({ images,onClick }: QuizSlotsProps) => {
 
   const resetQuiz = () => {
     setShuffledImages(shuffle(images))
-    setSlots(Array(4).fill(null))
+    setSlots(Array(images.length).fill(null))
     setIsCorrectOrder(false)
     setCurrentStep(0)
     setTimeLeft(10);
@@ -139,12 +139,12 @@ const QuizSlots = ({ images,onClick }: QuizSlotsProps) => {
       {currentStep === 0 && (
         <>
           <div className="text-center text-2xl mb-4">Tiempo restante: {timeLeft} segundos</div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4 mb-8`}>
             {images?.map((image) => (
               <div key={image.id} className='
                 flex-col  align-middle bg-blue-100 flex items-center justify-center cursor-pointer p-2
               '>
-                <Image src={image.src} alt={image.name} width={200} height={200} className='object-content' />
+                <Image src={image.src} alt={image.name} width={200} height={200} className='object-content w-48 h-48' />
                 <p className="text-center font-serif  ">{image.name}</p>
               </div>
             ))}
@@ -165,16 +165,16 @@ const QuizSlots = ({ images,onClick }: QuizSlotsProps) => {
             </>
           }
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4 mb-8`}>
               {shuffledImages?.map((image) => (
                 <SortableItem key={image.id} id={image.id} src={image.src} name={image.name} />
               ))}
             </div>
             <SortableContext items={emptySlots} strategy={rectSortingStrategy}>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className={`grid grid-cols-1 md:grid-cols-${images.length} gap-4 mb-8`}>
                 {slots.map((slot,index) => (
-                  <DroppableSlot key={index} id={`slot${index + 1}`}>
-                    {slot && <Image src={slot.src} alt={slot.name} width={200} height={200} className='object-content'/>}
+                  <DroppableSlot key={index} id={`slot${index + 1}`}  >
+                    {slot && <Image src={slot.src} alt={slot.name} width={200} height={200} className='object-content w-48 h-48'/>}
                   </DroppableSlot>
                 ))}
               </div>
