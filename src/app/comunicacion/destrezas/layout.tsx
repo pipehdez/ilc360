@@ -18,17 +18,8 @@ export default function SliperdLayout({
     return (
         <div className='p-0 w-full'>
             <div className="relative bg-white">
-                {/* <div className="absolute inset-0">
-                  <img className="object-cover w-full h-72" src={
-                      path === "/sliperd/curriculum" ? imageBackground2 :
-                    imageBackground
-                    } alt="image-background" />
-            <div className="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-        </div> */}
                 <div className="bg-sliperd-backgroud-image bg-no-repeat bg-cover bg-opacity-20 -z-10">
-                    {/* <Subnavbar
-                navigation={navigation}
-            /> */}
+
                     {
                         path === "/comunicacion/destrezas" && (
                             <div className=" flex flex-col items-center justify-center p-10 text-white gap-5">

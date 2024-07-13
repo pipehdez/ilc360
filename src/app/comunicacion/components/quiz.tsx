@@ -16,13 +16,6 @@ interface ImageItem {
     name: string
 }
 
-const images: ImageItem[] = [
-    { id: '1',src: '/img/chair.jpg',name: 'Chair' },
-    { id: '2',src: '/img/desk.jpg',name: 'Desk' },
-    { id: '3',src: '/img/papers.jpg',name: 'Papers' },
-    { id: '4',src: '/img/laptop.jpg',name: 'Laptop' },
-]
-
 const SortableItem: React.FC<{ id: string; src: string; name: string }> = ({ id,src,name }) => {
     const { attributes,listeners,setNodeRef,transform,transition } = useSortable({ id })
     const style = {
@@ -37,7 +30,11 @@ const SortableItem: React.FC<{ id: string; src: string; name: string }> = ({ id,
     )
 }
 
-const Quiz: React.FC = () => {
+interface QuizProps {
+    images: ImageItem[]
+    onClick: () => void
+}
+const Quiz = ({images, onClick}: QuizProps) => {
     const [currentStep,setCurrentStep] = useState(0)
     const [shuffledImages,setShuffledImages] = useState<ImageItem[]>([])
     const [selectedImages,setSelectedImages] = useState<ImageItem[]>([])
@@ -101,8 +98,8 @@ const Quiz: React.FC = () => {
     }
 
     return (
-        <div className="p-8">
-            {currentStep === 0 && (
+        <div className="bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
+            {/* {currentStep === 0 && (
                 <>
                     <div className="text-center text-2xl mb-4">Tiempo restante: {timeLeft} segundos</div>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -114,8 +111,8 @@ const Quiz: React.FC = () => {
                         ))}
                     </div>
                 </>
-            )}
-            {currentStep === 1 && (
+            )} */}
+            {/* {currentStep === 1 && ( */}
                 <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
                     <SortableContext items={shuffledImages} strategy={verticalListSortingStrategy}>
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -136,14 +133,14 @@ const Quiz: React.FC = () => {
                     </div>
                     {isCorrectOrder && (
                         <div className="mt-4">
-                            <button className="bg-green-500 text-white px-4 py-2 rounded">Enviar</button>
+                            <button onClick={onClick} className="bg-green-500 text-white px-4 py-2 rounded">Enviar</button>
                         </div>
                     )}
                     <div className="mt-4">
                         <button onClick={resetQuiz} className="bg-blue-500 text-white px-4 py-2 rounded">Reiniciar</button>
                     </div>
                 </DndContext>
-            )}
+            {/* )} */}
         </div>
     )
 }

@@ -33,14 +33,6 @@ export default function Subnavbar({ navigation }: SubnavbarProps) {
             ))}
           </ul>
         </div>
-
-        {/* <div className="hidden mr-3 space-x-3 lg:flex nav__item">
-          <Link href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-              Get Started
-          </Link>
-
-          <ThemeChanger />
-        </div> */}
       </nav>
     </div>
   );
