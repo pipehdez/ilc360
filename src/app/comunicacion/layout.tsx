@@ -54,8 +54,8 @@ export default function SliperdLayout({
                     {
                         path === "/comunicacion" && (
                             <div className=" flex flex-col items-center justify-center p-10 text-white gap-3">
-                                <h1 className="text-8xl font-bold p-5 bg-gray-500/30">{path === "/comunicacion" && "COMUNICACIÓN DIGITAL"}</h1>
-                                <p className="text-3xl p-5 mx-10 text-center bg-gray-500/30">
+                                <h1 className="text-4xl font-bold p-5 bg-gray-500/30">{path === "/comunicacion" && "COMUNICACIÓN DIGITAL"}</h1>
+                                <p className="text-xl p-5 mx-10 text-center bg-gray-500/30">
                                     {
                                         path === "/comunicacion" ? `SIN SIGNOS NO HAY SUJETO, SENTENCIA UMBERTO ECO. EN ESA DIRECCIÓN SE DESPLIEGA UNA IDEA QUE ES ARROLLADORA; “LA CONSCIENCIA TIENE UN ORIGEN SEMIÓTICO. HELLEN NO SOLO NECESITA LOS SIGNOS PARA PEDIR, SINO TAMBIÉN PARA DECIR, PARA CONTAR, PARA COMENTAR, PARA DIRIGIRSE A OTROS, PARA OPINAR…¡PERO SOBRE TODO NECESITA LOS SIGNOS PARA INTERRELACIONARSE O COMUNICARSE!.
 

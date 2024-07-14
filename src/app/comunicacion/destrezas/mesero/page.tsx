@@ -43,7 +43,7 @@ const questionsOne = [
 ];
 
 export default function Page() {
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const handleNextStep = () => {
     console.log("handleNextStep");
