@@ -12,7 +12,7 @@ export default function SliperdLayout({
     const path = usePathname()
 
   return (
-    <div className='p-0 w-full'>
+    <div className='p-0 w-full bg-gray-600/15'>
       { children }
         <Footer />
     </div>

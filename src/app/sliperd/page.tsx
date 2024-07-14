@@ -82,9 +82,9 @@ const OurServices = () => {
               <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white ">{service.title.toUpperCase()}</p>
           </div>) : (
             <Link href={service.url} key={service.id}>
-              <p className="flex flex-col items-center">
+                <p className="flex flex-col items-center border-2 hover:border-gray-600/15 border-white">
                 <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
-                  <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white">{service.title.toUpperCase()}</p>
+                  <p className="mt-2 text-center bg-gray-600/15 p-2 text-balance text-gray-600 ">{service.title.toUpperCase()}</p>
               </p>
             </Link>
           )
