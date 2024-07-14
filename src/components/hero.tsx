@@ -63,6 +63,7 @@ interface ModalData {
   alt: string;
   text: string;
   color: string;
+  onClick: () => void;
 }
 
 interface HeroProps {
@@ -78,44 +79,7 @@ export default function Hero({ imageBackground }: HeroProps) {
     setShowModal(true);
   }
 
-  function Modal({ src,alt,text,color }: ModalData) {
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div className={`relative z-50 w-1/2 ${color} p-10`}>
-          {/*  cerrar modal */}
-          <button
-            onClick={() => setShowModal(false)}
-            className="absolute top-0 right-0 p-5"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-white dark:text-white"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M2.293 2.293a1 1 0 011.414 0L10 8.586l6.293-6.293a1 1 0 111.414 1.414L11.414 10l6.293 6.293a1 1 0 01-1.414 1.414L10 11.414l-6.293 6.293a1 1 0 01-1.414-1.414L8.586 10 2.293 3.707a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-          <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight dark:text-white">
-            {alt}
-          </h1>
-          <div className="w-20 h-0.5 bg-gray-300 dark:bg-gray-700/50 m-5" />
-          <div className="flex flex-row items-center justify-between align-middle">
-            <p className="py-5 text-xl leading-normal text-white lg:text-xl xl:text-2xl dark:text-white">
-              {text}
-            </p>
-            <div className="relative w-full">
-              <Image width={200} height={100} src={src} alt={alt} objectFit="contain" />
-            </div>
-            </div>
-          </div>
-        </div>
-    )
-  }
+ 
   
   return (
     <>
@@ -183,8 +147,49 @@ export default function Hero({ imageBackground }: HeroProps) {
           alt={modalData.alt}
           text={modalData.text}
           color={modalData.color}
+          onClick={() => setShowModal(false)}
         />
       )}
     </>
   );
+}
+
+
+const Modal = ({ src,alt,text,color,onClick }: ModalData) => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className={`relative z-50 w-1/2 ${color} p-10`}>
+        {/*  cerrar modal */}
+        <button
+          onClick={onClick}
+          className="absolute top-0 right-0 p-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 text-white dark:text-white"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2.293 2.293a1 1 0 011.414 0L10 8.586l6.293-6.293a1 1 0 111.414 1.414L11.414 10l6.293 6.293a1 1 0 01-1.414 1.414L10 11.414l-6.293 6.293a1 1 0 01-1.414-1.414L8.586 10 2.293 3.707a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+        <h1 className="text-4xl font-bold leading-snug tracking-tight text-white lg:text-3xl lg:leading-tight xl:text-4xl xl:leading-tight dark:text-white">
+          {alt}
+        </h1>
+        <div className="w-20 h-0.5 bg-gray-300 dark:bg-gray-700/50 m-5" />
+        <div className="flex flex-row items-center justify-between align-middle">
+          <p className="py-5 text-xl leading-normal text-white lg:text-xl xl:text-2xl dark:text-white">
+            {text}
+          </p>
+          <div className="relative w-full">
+            <Image width={200} height={100} src={src} alt={alt} objectFit="contain" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
