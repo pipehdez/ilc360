@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import AgilityQuiz from '../../components/AgilityQuiz'
+import Congrats from '../../components/congrats'
 
 
 interface Option {
@@ -55,6 +56,27 @@ const questionsTwo: Question[] = [
   },
 ]
 
+const questionsThree: Question[] = [
+  {
+    id: '3',
+    category: 'Material para manualidades',
+    options: [
+      { id: '1',word: 'Aspiradora',isCorrect: false,src: '/img/ASPIRADORA.jpg' },
+      { id: '2',word: 'Colbón',isCorrect: true,src: '/img/COLBON.jpg' },
+      { id: '3',word: 'Lámpara',isCorrect: false,src: '/img/LAMPARA.jpg' },
+      { id: '4',word: 'Perfume',isCorrect: false,src: '/img/PERFUME.jpg' },
+      { id: '5',word: 'Pintura',isCorrect: true,src: '/img/PINTURA.jpg' },
+      { id: '6',word: 'Bicicleta',isCorrect: false,src: '/img/BICICLETA.jpg' },
+      { id: '7',word: 'Pelota',isCorrect: false,src: '/img/PELOTA.jpg' },
+      { id: '8',word: 'Cuchara',isCorrect: false,src: '/img/CUCHARA.jpg' },
+      { id: '9',word: 'Lentes',isCorrect: false,src: '/img/LENTES.jpg' },
+      { id: '10',word: 'Plato',isCorrect: false,src: '/img/PLATO.jpg' },
+      { id: '11',word: 'Pinceles',isCorrect: true,src: '/img/PINCELES.jpg' },
+      { id: '12',word: 'Sofá',isCorrect: false,src: '/img/SOFA.jpg' },
+    ],
+  },
+]
+
 export default function Page() {
   const [currentStep,setCurrentStep] = useState(0)
 
@@ -62,26 +84,28 @@ export default function Page() {
     console.log("handleNextStep")
     setCurrentStep((prevStep) => prevStep + 1)
   };
+  const quizSlots = [0,1,2]
   return (
     <>
+    {
+        quizSlots.includes(currentStep) && (
+
       <div className="bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
         <h1 className="text-4xl font-bold mb-2">AGILIDAD</h1>
         <h2 className="text-2xl font-semibold mb-4">La rapidez con la que una persona puede entender y responder o actuar según la información que recibe.</h2>
         <p className="text-lg mb-2">Elige las palabras de acuerdo a la categoría semántica dada.</p>
       </div>
+        )
+    }
     {
       currentStep === 0 ? (
           <AgilityQuiz questions={questionsOne} onClick={handleNextStep} />
       ) : currentStep === 1 ? (
             <AgilityQuiz questions={questionsTwo} onClick={handleNextStep} />
       ) : currentStep === 2 ? (
-        <h1>Step 3</h1>
-      ) : currentStep === 3 ? (
-        <h1>Step 4</h1>
-      ) : currentStep === 4 ? (
-        <h1>Step 5</h1>
+            <AgilityQuiz questions={questionsThree} onClick={handleNextStep} />
       ) : (
-        <h1>Congrats</h1>
+        <Congrats />
       )
     }
       
