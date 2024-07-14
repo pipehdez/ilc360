@@ -8,7 +8,7 @@ export default function Benefits(props: any) {
 
   return (
     <>
-      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg">
+      <Container className="flex flex-wrap lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg">
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${
             imgPos === "right" ? "lg:order-1" : ""

@@ -45,14 +45,17 @@ export default function Page() {
   return (
     <div className='w-full'>
       <Header title='SLIPERD' description='Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo. Es por ello, que en el momento que decidimos postularnos para una oferta laboral, la hoja de vida entra a ser uno de los factores determinantes en los procesos de selección. El nivel de oportunidad para continuar avanzando en dichos procesos dependerá en gran medida de su correcta elaboración, ya que a través de este medio pueden presentarse y generar una primera impresión, además de resaltar aquellas habilidades, competencias y experiencias que puedan ubicar a la persona en una posición de ventaja frente a otras, para convertirse en un candidato atractivo para las empresas.' />
+      <div className="h-14" />
       {
         benefit.map((item, index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
+      <div className="h-14" />
       <OurServices />
-      
+      <div className="h-14" />
       <MissionVision />
+      <div className="h-14" />
       <ValuesSection />
     </div>
   )
@@ -71,7 +74,7 @@ const services = [
 const OurServices = () => {
   return (
     // flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto mb-10 justify-center max-w-screen-2xl
-    <div className="flex flex-col bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
+    <div className="flex flex-col bg-white shadow-lg rounded-lg items-center p-8 mx-auto  max-w-screen-2xl">
       <h2 className="text-3xl font-bold mb-6">Nuestros servicios</h2>
       <Separator />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full mt-10 gap-10">
@@ -96,7 +99,7 @@ const OurServices = () => {
 
 const MissionVision = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto mb-10 justify-center max-w-screen-2xl">
+    <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto justify-center max-w-screen-2xl">
       <div className="md:w-2/5 p-4">
         <h2 className="text-2xl font-bold mb-4">Misión</h2>
         <Separator />
