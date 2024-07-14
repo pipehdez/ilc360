@@ -64,7 +64,7 @@ const services = [
   { id: 3,title: 'Bolsa de empleo',image: '/img/work.png', url: '/sliperd/empleo' },
   { id: 4,title: 'Reclutamiento y Selección de personal',image: '/img/empleo.jpg',url: '/sliperd/reclutamiento' },
   { id: 5,title: 'Capacitaciones',image: '/img/capacitaciones.jpg',url: '/sliperd/capacitaciones' },
-  { id: 6,title: 'Asesoramiento jurídico empresarial',image: '/img/conversation.png', url: '/sliperd/servicios' },
+  { id: 6,title: 'Asesoramiento jurídico empresarial',image: '/img/asesoramiento.jpg', url: '/sliperd/asesoramiento' },
   { id: 7,title: 'Visita virtual',image: '/img/conversation.png', url: '/sliperd/servicios' },
 ]
 
