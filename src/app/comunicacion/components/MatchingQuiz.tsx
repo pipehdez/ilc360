@@ -85,6 +85,7 @@ const MatchingQuiz: React.FC = () => {
                         <div key={category} className="flex flex-col items-center">
                             <div className="p-4 border-2 border-gray-300 mb-2">{category}</div>
                             <div
+                            // @ts-ignore
                                 ref={drop}
                                 className={`p-4 border-2 ${isOver ? 'border-blue-500' : 'border-gray-300'} min-h-[50px]`}
                             >
@@ -127,6 +128,7 @@ const DraggableOption: React.FC<{ option: Option }> = ({ option }) => {
 
     return (
         <div
+            // @ts-ignore
             ref={drag}
             className={`cursor-pointer p-4 border-2 ${isDragging ? 'border-blue-500' : 'border-gray-300'}`}
         >
