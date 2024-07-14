@@ -3,6 +3,8 @@ import Benefits from '@/components/benefits'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
+import Container from '@/components/container'
+import Spacing from '@/app/comunicacion/components/spacing'
 
 const benefitOneImg = '/img/empleo.jpg'
 
@@ -33,14 +35,17 @@ export default function Page() {
   return (
     <>
       <Header title='Capacitaciones sobre las habilidades comunicativas e inclusión laboral' description='' />
+      <Spacing />
       {
         benefit.map((item,index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
+      <Spacing />
+      <Container className="flex flex-col flex-wrap lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg">
       <div className="container mx-auto flex flex-col items-center justify-center py-10">
         <div className="flex flex-col items-center justify-center">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="flex flex-row items-center justify-center  grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {
               servicios.map((service) => (
                 <div key={service.id} className="flex flex-col items-center cursor-pointer border-2 hover:border-blue-500  " onClick={() => handleModal(service)}>
@@ -64,6 +69,8 @@ export default function Page() {
         )
       }
       </div>
+      </Container>
+      <Spacing />
     </>
   )
 }

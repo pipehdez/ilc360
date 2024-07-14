@@ -2,6 +2,8 @@ import Benefits from '@/components/benefits'
 import React from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
+import Container from '@/components/container'
+import Spacing from '@/app/comunicacion/components/spacing'
 
 const benefitOneImg = '/img/adaptativa.jpg'
 
@@ -30,31 +32,37 @@ export default function Page() {
   return (
     <>
     <Header title='SLIPERD' description='Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo. Es por ello, que en el momento que decidimos postularnos para una oferta laboral, la hoja de vida entra a ser uno de los factores determinantes en los procesos de selección. El nivel de oportunidad para continuar avanzando en dichos procesos dependerá en gran medida de su correcta elaboración, ya que a través de este medio pueden presentarse y generar una primera impresión, además de resaltar aquellas habilidades, competencias y experiencias que puedan ubicar a la persona en una posición de ventaja frente a otras, para convertirse en un candidato atractivo para las empresas.' />
+      <Spacing />
       {
         benefit.map((item,index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
-      {/* seccion de titulo con icono */}
-      <div className="container mx-auto flex flex-col items-center justify-center py-10">
-        <div className="flex flex-col items-center justify-center">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {
-              servicios.map((service) => (
-                <div key={service.id} className="flex flex-col items-center">
-                  <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
-                  <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white ">{service.title.toUpperCase()}</p>
-                </div>
-              ))
-            }
-            
+      <Spacing />
+      <Container className="flex flex-wrap lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg">
+        <div className="container mx-auto flex flex-col items-center justify-center py-10">
+          <div className="flex flex-col items-center justify-center">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {
+                servicios.map((service) => (
+                  <div key={service.id} className="flex flex-col items-center">
+                    <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
+                    <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white ">{service.title.toUpperCase()}</p>
+                  </div>
+                ))
+              }
+              
+            </div>
           </div>
         </div>
+      </Container>
+      <Spacing />
+      <Container className="flex flex-wrap lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg">
+      <div className="container mx-auto flex flex-col items-center justify-center px-10">
+        <p className="text-xl text-justify">Estas habilidades se evalúan mediante el protocolo CALS (protocolo de habilidades adaptativas), el cual se encarga de medir las destrezas adaptativas de las personas con y sin discapacidad, evaluando 4 áreas específicas: destrezas de la vida personal, en el hogar, en la comunidad y en lo laboral. El profesional que se encargará de esta evaluación es un terapeuta ocupacional, quien al finalizar la prueba genera un informe que incluye el perfil ocupacional del cliente, el cual es enviado al director de talento humano quien aprueba los resultados. Posteriormente se contacta nuevamente al cliente y se le informan los resultados del perfil ocupacional al que podría aplicar.</p>
       </div>
-      {/* texto explicativo */}
-      <div className="container mx-auto flex flex-col items-center justify-center py-10">
-        <p className="text-xl text-center">Estas habilidades se evalúan mediante el protocolo CALS (protocolo de habilidades adaptativas), el cual se encarga de medir las destrezas adaptativas de las personas con y sin discapacidad, evaluando 4 áreas específicas: destrezas de la vida personal, en el hogar, en la comunidad y en lo laboral. El profesional que se encargará de esta evaluación es un terapeuta ocupacional, quien al finalizar la prueba genera un informe que incluye el perfil ocupacional del cliente, el cual es enviado al director de talento humano quien aprueba los resultados. Posteriormente se contacta nuevamente al cliente y se le informan los resultados del perfil ocupacional al que podría aplicar.</p>
-      </div>
+      </Container>
+      <Spacing />
     </>
   )
 }

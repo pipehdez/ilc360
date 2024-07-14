@@ -2,6 +2,7 @@ import Benefits from '@/components/benefits'
 import React from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
+import Spacing from '@/app/comunicacion/components/spacing'
 
 const benefitOneImg = '/img/empleo.jpg'
 
@@ -18,11 +19,13 @@ export default function Page() {
   return (
     <>
       <Header title='Bolsa de empleo' description='Postula tu vacante' />
+      <Spacing />
       {
         benefit.map((item,index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
+      <Spacing />
     </>
   )
 }

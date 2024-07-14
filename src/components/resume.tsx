@@ -303,7 +303,7 @@ const Resume = () => {
             }
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col md:flex-row bg-gray-100 p-8 md:p-16"
+                className="flex flex-col md:flex-row p-8 md:p-16"
                 id="resume"
             >
                 <div className="bg-blue-800 text-white p-8 md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none">

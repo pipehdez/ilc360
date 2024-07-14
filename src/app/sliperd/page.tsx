@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { url } from 'inspector'
 import Link from 'next/link'
 import Header from './components/Header'
+import Spacing from '../comunicacion/components/spacing'
 
 const benefitOneImg = '/img/description.jpg'
 const benefitTwoImg = '/img/about.jpg'
@@ -45,17 +46,17 @@ export default function Page() {
   return (
     <div className='w-full'>
       <Header title='SLIPERD' description='Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo. Es por ello, que en el momento que decidimos postularnos para una oferta laboral, la hoja de vida entra a ser uno de los factores determinantes en los procesos de selección. El nivel de oportunidad para continuar avanzando en dichos procesos dependerá en gran medida de su correcta elaboración, ya que a través de este medio pueden presentarse y generar una primera impresión, además de resaltar aquellas habilidades, competencias y experiencias que puedan ubicar a la persona en una posición de ventaja frente a otras, para convertirse en un candidato atractivo para las empresas.' />
-      <div className="h-14" />
+      <Spacing />
       {
         benefit.map((item, index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
-      <div className="h-14" />
+      <Spacing />
       <OurServices />
-      <div className="h-14" />
+      <Spacing />
       <MissionVision />
-      <div className="h-14" />
+      <Spacing />
       <ValuesSection />
     </div>
   )

@@ -3,6 +3,7 @@ import Benefits from '@/components/benefits'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
+import Spacing from '@/app/comunicacion/components/spacing'
 
 const benefitOneImg = '/img/asesoramiento.jpg'
 
@@ -20,11 +21,13 @@ export default function Page() {
   return (
     <>
       <Header title='Asesoramiento jurídico empresarial' description='Contratar servicio' />
+      <Spacing />
       {
         benefit.map((item,index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
         ))
       }
+      <Spacing />
     </>
   )
 }
