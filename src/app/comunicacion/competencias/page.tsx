@@ -28,12 +28,13 @@ export default function Page() {
           <Link href="/comunicacion/competencias/compuestas">
             <Image
               src="/img/ACTIVIDAD4.jpg"
-              alt="Frases compuestas"
+              alt="COMPETENCIAS SOCIOLINGÜÍSTICAS"
               width={200}
               height={100}
               className="h-50"
             />
-            COMPETENCIAS SOCIOLINGÜÍSTICAS
+            COMPETENCIAS <br />
+            SOCIOLINGÜÍSTICAS
           </Link>
           </div>
       </div>

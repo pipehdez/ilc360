@@ -11,6 +11,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { url } from 'inspector'
 import Link from 'next/link'
+import Header from './components/Header'
 
 const benefitOneImg = '/img/description.jpg'
 const benefitTwoImg = '/img/about.jpg'
@@ -43,7 +44,7 @@ export default function Page() {
 
   return (
     <div className='w-full'>
-      
+      <Header title='SLIPERD' description='Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo. Es por ello, que en el momento que decidimos postularnos para una oferta laboral, la hoja de vida entra a ser uno de los factores determinantes en los procesos de selección. El nivel de oportunidad para continuar avanzando en dichos procesos dependerá en gran medida de su correcta elaboración, ya que a través de este medio pueden presentarse y generar una primera impresión, además de resaltar aquellas habilidades, competencias y experiencias que puedan ubicar a la persona en una posición de ventaja frente a otras, para convertirse en un candidato atractivo para las empresas.' />
       {
         benefit.map((item, index) => (
           <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
@@ -58,10 +59,13 @@ export default function Page() {
 }
 
 const services = [
-  { id: 1,title: 'Evaluación de habilidades adaptivas',image: '/img/certainty.png',url: '/sliperd/servicios'},
-  { id: 2,title: 'Hoja de vida',image: '/img/cv.png', url: '/sliperd/curriculum'},
-  { id: 3,title: 'Capacitaciones',image: '/img/conversation.png' },
-  { id: 4,title: 'Bolsa de empleo',image: '/img/work.png' },
+  { id: 1,title: 'Evaluación de habilidades adaptivas', image: '/img/certainty.png', url: '/sliperd/servicios'},
+  { id: 2,title: 'Hoja de vida', image: '/img/cv.png', url: '/sliperd/curriculum'},
+  { id: 3,title: 'Bolsa de empleo',image: '/img/work.png', url: '/sliperd/empleo' },
+  { id: 4,title: 'Reclutamiento y Selección de personal',image: '/img/empleo.jpg',url: '/sliperd/reclutamiento' },
+  { id: 5,title: 'Capacitaciones',image: '/img/capacitaciones.jpg',url: '/sliperd/capacitaciones' },
+  { id: 6,title: 'Asesoramiento jurídico empresarial',image: '/img/conversation.png', url: '/sliperd/servicios' },
+  { id: 7,title: 'Visita virtual',image: '/img/conversation.png', url: '/sliperd/servicios' },
 ]
 
 const OurServices = () => {
@@ -70,17 +74,17 @@ const OurServices = () => {
     <div className="flex flex-col bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
       <h2 className="text-3xl font-bold mb-6">Nuestros servicios</h2>
       <Separator />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full mt-10 gap-10">
         {services.map((service) => (
           !service.url ?(
           <div key={service.id} className="flex flex-col items-center">
-            <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-contain" />
-            <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service.title}</p>
+              <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
+              <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white ">{service.title.toUpperCase()}</p>
           </div>) : (
             <Link href={service.url} key={service.id}>
               <p className="flex flex-col items-center">
-                <img src={service.image} alt={service.title} className="h-24 md:w-32 md:h-32 object-contain" />
-                <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance ">{service.title}</p>
+                <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
+                  <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white">{service.title.toUpperCase()}</p>
               </p>
             </Link>
           )
