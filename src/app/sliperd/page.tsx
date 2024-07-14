@@ -59,13 +59,13 @@ export default function Page() {
 }
 
 const services = [
-  { id: 1,title: 'Evaluación de habilidades adaptivas', image: '/img/certainty.png', url: '/sliperd/servicios'},
-  { id: 2,title: 'Hoja de vida', image: '/img/cv.png', url: '/sliperd/curriculum'},
-  { id: 3,title: 'Bolsa de empleo',image: '/img/work.png', url: '/sliperd/empleo' },
+  { id: 1,title: 'Evaluación de habilidades adaptivas', image: '/img/habilidades.jpg', url: '/sliperd/servicios'},
+  { id: 2,title: 'Hoja de vida', image: '/img/hoja.jpg', url: '/sliperd/curriculum'},
+  { id: 3,title: 'Bolsa de empleo',image: '/img/capacitaciones.jpg', url: '/sliperd/empleo' },
   { id: 4,title: 'Reclutamiento y Selección de personal',image: '/img/empleo.jpg',url: '/sliperd/reclutamiento' },
   { id: 5,title: 'Capacitaciones',image: '/img/capacitaciones.jpg',url: '/sliperd/capacitaciones' },
   { id: 6,title: 'Asesoramiento jurídico empresarial',image: '/img/asesoramiento.jpg', url: '/sliperd/asesoramiento' },
-  { id: 7,title: 'Visita virtual',image: '/img/conversation.png', url: '/sliperd/servicios' },
+  { id: 7,title: 'Visita virtual',image: '/img/visita.jpg', url: '/sliperd/visita' },
 ]
 
 const OurServices = () => {
