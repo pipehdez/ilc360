@@ -38,7 +38,7 @@ export default function SliperdLayout({
     const path = usePathname()
 
     return (
-        <div className='p-0 w-full'>
+        <div className='p-0 w-full bg-gray-600/15'>
             <div className="relative bg-white">
                 {/* <div className="absolute inset-0">
                   <img className="object-cover w-full h-72" src={

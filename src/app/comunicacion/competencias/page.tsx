@@ -1,6 +1,8 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
+import Container from '@/components/container'
+import Spacing from '../components/spacing'
 
 export default function Page() {
 
@@ -11,8 +13,9 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center">
         <p className="text-3xl p-5">Haz que el aprendizaje sea divertido.</p>
       </div>
+      <Container className="flex flex-wrap lg:gap-10 lg:flex-nowrap bg-white shadow-lg rounded-lg justify-center">
       <div className="flex grid-cols-3 flex-row items-center justify-center gap-10 m-10">
-        <div className="flex flex-col mx-auto items-center text-xl font-bold text-center justify-center">
+          <div className="flex flex-col items-center border-2 hover:border-gray-600/15 border-white">
           <Link href="/comunicacion/competencias/simples">
             <Image
               src="/img/ACTIVIDAD3.jpg"
@@ -24,7 +27,7 @@ export default function Page() {
             FRASES SIMPLES
           </Link>
         </div>
-        <div className="flex flex-col mx-auto items-center text-xl font-bold text-center justify-center">
+          <div className="flex flex-col items-center border-2 hover:border-gray-600/15 border-white">
           <Link href="/comunicacion/competencias/compuestas">
             <Image
               src="/img/ACTIVIDAD4.jpg"
@@ -38,6 +41,8 @@ export default function Page() {
           </Link>
           </div>
       </div>
+      </Container>
+      <Spacing />
     </div>
   )
 }

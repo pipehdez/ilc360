@@ -67,7 +67,7 @@ const MatchingQuiz: React.FC = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <div className="p-8">
+            <div className="bg-white shadow-lg rounded-lg items-center p-8 mx-auto  mb-10 max-w-screen-2xl">
                 <header className="mb-8">
                     <h1 className="text-4xl font-bold mb-2">Unir Palabras</h1>
                     <h2 className="text-2xl font-semibold mb-4">

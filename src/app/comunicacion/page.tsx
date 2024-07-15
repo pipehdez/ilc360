@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import Spacing from './components/spacing'
 
 const benefitOneImg = '/img/comunicacion1.jpg'
 const benefitTwoImg = '/img/comunicacion2.jpg'
@@ -39,13 +40,18 @@ export default function Page() {
     }
     return (
         <div className='w-full'>
+            <Spacing />
             <OurPrograms />
             {
                 benefit.map((item, index) => (
-                    <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
+                    <>
+                        <Benefits key={index} title={item.title} image={item.image} desc={item.desc} imgPos={item.imgPos} />
+                        <Spacing />
+                    </>
                 ))
             }
             <MissionVision />
+            <Spacing />
             <ValuesSection />
             
         </div>
@@ -84,7 +90,7 @@ const OurPrograms = () => {
 
 const MissionVision = () => {
     return (
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto mb-10 justify-center max-w-screen-2xl">
+        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-8 mx-auto justify-center max-w-screen-2xl">
             <div className="md:w-2/5 p-4">
                 <h2 className="text-2xl font-bold mb-4">Misión</h2>
                 <Separator />
