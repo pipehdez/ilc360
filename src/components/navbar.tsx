@@ -3,6 +3,7 @@ import Link from "next/link"
 import { usePathname,useRouter } from 'next/navigation'
 import { signOut,useSession } from "next-auth/react"
 import { use,useEffect,useState } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
   // const navigation = ["Home", "Sliperd", "Comunicación"];
@@ -114,11 +115,12 @@ export default function Navbar() {
           {
             path !== "/" && (
               <Link href="/" className="flex items-center">
-                <img
-                  src={path.includes('comunicacion') ? "/img/logo-comunicacion.png" : "/img/logo.png"}
+                {/* <img
+                  src={path.includes('comunicacion') ? "/img/logo-comunicacion.png" : "/img/logo-sliperd.jpg"}
                   alt="Logo"
                   className="h-10"
-                />
+                /> */}
+                <Image src={path.includes('comunicacion') ? "/img/logo-comunicacion.png" : "/img/logo-sliperd.jpg"} alt="Logo" width={100} height={100} className='h-20 w-auto mr-10' />
               </Link>
             )
           }
