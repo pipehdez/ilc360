@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Spacing from '@/app/comunicacion/components/spacing'
+import ResumeSection from '../components/ResumeSection'
 
 const benefitOneImg = '/img/asesoramiento.jpg'
 
@@ -20,7 +21,12 @@ export default function Page() {
 
   return (
     <>
-      <Header title='Visita virtual' description='Contratar servicio' />
+      {/* <Header title='Visita virtual' description='Contratar servicio' /> */}
+      <ResumeSection
+        title="Visita virtual"
+        description=""
+        image="url('/img/visita-virtual.jpg')" // bolsa-empleo.jpg
+      />
       <Spacing />
       {
         benefit.map((item,index) => (

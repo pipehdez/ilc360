@@ -5,8 +5,9 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Container from '@/components/container'
 import Spacing from '@/app/comunicacion/components/spacing'
+import ResumeSection from '../components/ResumeSection'
 
-const benefitOneImg = '/img/empleo.jpg'
+const benefitOneImg = '/img/capacitaciones-2.jpg'
 
 const benefit = [
   {
@@ -19,7 +20,7 @@ const benefit = [
 
 const servicios = [
   { id: 1,title: 'Curso de comunicación efectiva',desription: 'En este curso obtendrás las habilidades necesarias para comunicarte de manera clara, concisa y persuasiva en cualquier situación, especialmente en el ámbito laboral. Conoce más información de este curso en el siguiente link https://edutin.com/curso-de-comunicacion-efectiva ', image: '/img/1.png',url: '/sliperd/servicios' },
-  { id: 2,title: 'Capacitación sobre comunicación y habilidades sociales',desription: 'En esta capacitación obtendrás las herramientas necesarias para mejorar tus habilidades de comunicación y fortalecer tus relaciones interpersonales. Además, aprenderás a expresarte con claridad, escuchar activamente y establecer conexiones significativas con las demás personas.',image: '/img/2.png',url: '/sliperd/curriculum' },
+  { id: 2,title: 'Capacitación sobre comunicación y habilidades sociales',desription: 'En esta capacitación obtendrás las herramientas necesarias para mejorar tus habilidades de comunicación y fortalecer tus relaciones interpersonales. Además, aprenderás a expresarte con claridad, escuchar activamente y establecer conexiones significativas con las demás personas.',image: '/img/capacitaciones-de-comunicacion.jpg',url: '/sliperd/curriculum' },
   { id: 3,title: 'Capacitación de Inclusión Laboral',desription: 'Con esta capacitación aprenderás a aplicar los fundamentos teóricos de la disciplina, las leyes nacionales e internacionales vigentes, las estrategias para fomentarla y los beneficios que esta le aporta a las empresas. Además de identificar cómo desarrollar espacios inclusivos a favor del desarrollo humano y social.',image: '/img/3.png',url: '/sliperd/servicios' },
 ]
 
@@ -34,7 +35,14 @@ export default function Page() {
 
   return (
     <>
-      <Header title='Capacitaciones sobre las habilidades comunicativas e inclusión laboral' description='' />
+      {/* <Header title='Capacitaciones sobre las habilidades comunicativas e inclusión laboral' description='' /> */}
+      <ResumeSection
+        title="Capacitaciones sobre las habilidades comunicativas e inclusión laboral"
+        description=""
+        image="url('/img/capacitaciones-2.jpg')" // capacitaciones-2.jpg
+        // onClick={() => console.log('hola')}
+        // textButton='Contratar servicio'
+      />
       <Spacing />
       {
         benefit.map((item,index) => (
@@ -48,7 +56,7 @@ export default function Page() {
             <div className="flex flex-row items-center justify-center  grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {
               servicios.map((service) => (
-                <div key={service.id} className="flex flex-col items-center cursor-pointer border-2 hover:border-blue-500  " onClick={() => handleModal(service)}>
+                <div key={service.id} className="flex flex-col items-center cursor-pointer border-2 hover:border-blue-500 p-2 " onClick={() => handleModal(service)}>
                   <Image src={service.image} alt={service.title} width={100} height={100} className="h-24 md:w-32 md:h-32 object-contain" />
                   <p className="mt-2 text-center bg-gray-500/75 p-2 text-balance text-white ">{service.title.toUpperCase()}</p>
                 </div>

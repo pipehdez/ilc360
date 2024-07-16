@@ -1,8 +1,10 @@
+'use client'
 import Benefits from '@/components/benefits'
 import React from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Spacing from '@/app/comunicacion/components/spacing'
+import ResumeSection from '../components/ResumeSection'
 
 const benefitOneImg = '/img/reclutamiento.jpg'
 
@@ -18,7 +20,14 @@ const benefit = [
 export default function Page() {
   return (
     <>
-      <Header title='Reclutamiento y selección del personal' description='Contrata tu servicio' />
+      {/* <Header title='Reclutamiento y selección del personal' description='Contrata tu servicio' /> */}
+      <ResumeSection
+        title="Reclutamiento y selección del personal"
+        description=""
+        image="url('/img/reclutamiento-personal.jpg')" // capacitaciones-2.jpg
+        onClick={() => console.log('hola')}
+        textButton='Contratar servicio'
+      />
       <Spacing />
       {
         benefit.map((item,index) => (

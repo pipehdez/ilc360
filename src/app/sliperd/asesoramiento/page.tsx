@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Spacing from '@/app/comunicacion/components/spacing'
+import ResumeSection from '../components/ResumeSection'
 
 const benefitOneImg = '/img/asesoramiento.jpg'
 
@@ -20,7 +21,14 @@ export default function Page() {
 
   return (
     <>
-      <Header title='Asesoramiento jurídico empresarial' description='Contratar servicio' />
+      {/* <Header title='Asesoramiento jurídico empresarial' description='Contratar servicio' /> */}
+      <ResumeSection
+        title="Asesoramiento jurídico empresarial"
+        description=""
+        image="url('/img/asesoramiento.jpg')" // capacitaciones-2.jpg
+      // onClick={() => console.log('hola')}
+      // textButton='Contratar servicio'
+      />
       <Spacing />
       {
         benefit.map((item,index) => (

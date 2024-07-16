@@ -2,9 +2,11 @@ interface ResumeSectionProps {
     title: string
     description: string
     image: string
+    onClick?: () => void
+    textButton?: string
 }
 
-const ResumeSection = ({ title,description,image }: ResumeSectionProps) => {
+const ResumeSection = ({ title,description,image,onClick,textButton = "Iniciar" }: ResumeSectionProps) => {
     return (
         <div className="relative flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: image }}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -13,13 +15,20 @@ const ResumeSection = ({ title,description,image }: ResumeSectionProps) => {
                 <p className="mb-6">
                     {description}
                 </p>
-                <button className="mt-4 px-6 py-3 bg-gray-800 bg-opacity-70 rounded-lg hover:bg-opacity-90 transition duration-300"
+                {
+                    onClick && (
+                        <button className="mt-4 px-6 py-3 bg-gray-800 bg-opacity-70 rounded-lg hover:bg-opacity-90 transition duration-300" onClick={onClick}>
+                            {textButton}
+                        </button>
+                    )
+                }
+                {/* <button className="mt-4 px-6 py-3 bg-gray-800 bg-opacity-70 rounded-lg hover:bg-opacity-90 transition duration-300"
                     // llamar al id
                     // @ts-ignore
                     onClick={() => document.getElementById('resume').scrollIntoView({ behavior: 'smooth' })}
                 >
                     Iniciar
-                </button>
+                </button> */}
             </div>
         </div>
     )

@@ -45,7 +45,7 @@ export default function Page() {
 
   return (
     <div className='w-full'>
-      <Header title='SLIPERD' description='Son documentos que recopilan y presentan de manera organizada la información personal, académica y profesional de una persona. Su propósito principal es proporcionar a los empleadores una visión clara y concisa de las cualificaciones, experiencias y habilidades de un candidato para un puesto de trabajo. Es por ello, que en el momento que decidimos postularnos para una oferta laboral, la hoja de vida entra a ser uno de los factores determinantes en los procesos de selección. El nivel de oportunidad para continuar avanzando en dichos procesos dependerá en gran medida de su correcta elaboración, ya que a través de este medio pueden presentarse y generar una primera impresión, además de resaltar aquellas habilidades, competencias y experiencias que puedan ubicar a la persona en una posición de ventaja frente a otras, para convertirse en un candidato atractivo para las empresas.' />
+      <Header title='SLIPERD' description='UNIENDO TALENTOS, CREANDO OPORTUNIDADES' />
       <Spacing />
       {
         benefit.map((item, index) => (
@@ -65,11 +65,11 @@ export default function Page() {
 const services = [
   { id: 1,title: 'Evaluación de habilidades adaptivas', image: '/img/habilidades.jpg', url: '/sliperd/servicios'},
   { id: 2,title: 'Hoja de vida', image: '/img/hoja.jpg', url: '/sliperd/curriculum'},
-  { id: 3,title: 'Bolsa de empleo',image: '/img/capacitaciones.jpg', url: '/sliperd/empleo' },
-  { id: 4,title: 'Reclutamiento y Selección de personal',image: '/img/empleo.jpg',url: '/sliperd/reclutamiento' },
+  { id: 3,title: 'Bolsa de empleo',image: '/img/bolsa-empleo-2.jpg', url: '/sliperd/empleo' },
+  { id: 4,title: 'Reclutamiento y Selección de personal',image: '/img/reclutamiento-personal.jpg',url: '/sliperd/reclutamiento' },
   { id: 5,title: 'Capacitaciones',image: '/img/capacitaciones.jpg',url: '/sliperd/capacitaciones' },
   { id: 6,title: 'Asesoramiento jurídico empresarial',image: '/img/asesoramiento.jpg', url: '/sliperd/asesoramiento' },
-  { id: 7,title: 'Visita virtual',image: '/img/visita.jpg', url: '/sliperd/visita' },
+  { id: 7,title: 'Visita virtual',image: '/img/visita-virtual.jpg', url: '/sliperd/visita' },
 ]
 
 const OurServices = () => {
