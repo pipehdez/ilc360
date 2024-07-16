@@ -33,8 +33,9 @@ export default function Navbar() {
   const showSession = () => {
     if (status === "authenticated") {
       return (
+        <div className="pl-40 nav__item">
         <button
-          className={`border border-solid ml-44 border-white ${path === '/' ? "text-white" : "text-white"} rounded`}
+          className={`inline-block px-4 py-2 text-lg font-normal ${path === '/' ? "text-white" : "text-white"} no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none`}
           onClick={() => {
             signOut({ redirect: false }).then(() => {
               router.push("/")
@@ -44,6 +45,7 @@ export default function Navbar() {
         >
           SALIR
         </button>
+      </div>
       )
     } else if (status === "loading") {
       return (
@@ -51,12 +53,14 @@ export default function Navbar() {
       )
     } else {
       return (
+        <div className="pl-40 nav__item">
         <Link
           href="/login"
-          className={`inline-block px-4 py-2 text-lg font-normal ${path === '/' ? "text-white" : "text-gray-600"}  no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none`}
+          className={`inline-block px-4 py-2 text-lg font-normal ${path === '/' ? "text-white" : "text-white"} no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none`}
         >
           ENTRAR
         </Link>
+        </div>
       )
     }
   }
@@ -105,6 +109,20 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
+
+        <div className="pl-40">
+          {
+            path !== "/" && (
+              <Link href="/" className="flex items-center">
+                <img
+                  src={path.includes('comunicacion') ? "/img/logo-comunicacion.png" : "/img/logo.png"}
+                  alt="Logo"
+                  className="h-10"
+                />
+              </Link>
+            )
+          }
+          </div>
 
       </nav>
     </div>

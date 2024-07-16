@@ -25,7 +25,7 @@ export default function Page() {
             title: "ESTÁNDAR",
             subtitle: "PLAN 12 MESES",
             description: "AHORRE UN 30% CON LA SUSCRIPCIÓN ANUAL",
-            price: "$500.000",
+            price: "$378.000",
             features: [
                 "ACCESO A 3 MÓDULOS DE ELECCIÓN",
             ],
@@ -34,7 +34,7 @@ export default function Page() {
             title: "PREMIUM",
             subtitle: "PLAN 12 MESES",
             description: "SUSCRIPCIÓN A COMUNICACIÓN DIGITAL Y SLIPERD",
-            price: "$540.000",
+            price: "$4.536.000",
             features: [
                 "ACCESO A 3 MÓDULOS + ACCESO AL SERVICIO DE SLIPERD",
             ],
